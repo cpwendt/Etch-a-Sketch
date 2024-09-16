@@ -1,14 +1,14 @@
 const container = document.querySelector(".container");
 
 
-function makeGrid() {
-    for (r = 1; r <= 16; r++) {
+function makeGrid(number) {
+    for (r = 1; r <= number; r++) {
         const row = document.createElement("div")
         // row.className = "row"
         container.appendChild(row)
         // row.textContent = "r"+i
 
-        for (c = 1; c <= 16; c++) {
+        for (c = 1; c <= number; c++) {
             const cell = document.createElement("cell")
             // col.className = "col"
             row.appendChild(cell)
@@ -26,7 +26,7 @@ function makeGrid() {
     // }
 }
 
-makeGrid();
+// makeGrid(20);
 console.log(document)
 
 document.getElementById("restart").addEventListener('click', restart)
@@ -36,7 +36,8 @@ function restart() {
     container.style.backgroundColor = "grey"
 }
 
-
+const cells = parseInt(prompt("how many cells"))
+makeGrid(cells)
 // document.getElementsByClassName("col").onmouseover = function () { mouseOver() };
 
 // function mouseOver() {
