@@ -3,15 +3,15 @@ const container = document.querySelector(".container");
 
 function makeGrid() {
     for (r = 1; r <= 16; r++) {
-        // const row = document.createElement("div")
+        const row = document.createElement("div")
         // row.className = "row"
-        // container.appendChild(row)
+        container.appendChild(row)
         // row.textContent = "r"+i
 
         for (c = 1; c <= 16; c++) {
             const cell = document.createElement("cell")
             // col.className = "col"
-            container.appendChild(cell)
+            row.appendChild(cell)
             cell.textContent = r + "," + c
             cell.onmouseover = function mouseOver() {
                 this.style.backgroundColor = "transparent"
@@ -29,6 +29,12 @@ function makeGrid() {
 makeGrid();
 console.log(document)
 
+document.getElementById("restart").addEventListener('click', restart)
+
+function restart() {
+    // cell.styles.backgroundColor = "red"
+    container.style.backgroundColor = "grey"
+}
 
 
 // document.getElementsByClassName("col").onmouseover = function () { mouseOver() };
